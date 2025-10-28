@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
+        Title="Main Game Window" Height="768" Width="1024">
+    <Grid> <!-- Defines a grid in the window -->
+        <Grid.RowDefinitions>  <!-- Defines the rows on the grid -->
+            <RowDefinition Height="Auto"></RowDefinition> <!-- Sets height to use the needed space only -->
+            <RowDefinition Height="*"></RowDefinition> <!-- Sets the height to use all available space -->
+            <RowDefinition Height="225"></RowDefinition> <!-- Sets the height to specifically 225 pixels -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions> <!-- Defines the columns on the grid -->
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Menu" Background="AliceBlue"></Label> <!-- Places a label in grid slot 0,0 spanning 2 columns with text and a coloured background -->
+        <Label Grid.Row="1" Grid.Column="0" Content="Player Data" Background="Aquamarine"></Label>
+        <Label Grid.Row="1" Grid.Column="1" Content="Game Data" Background="Beige"></Label>
+        <Label Grid.Row="2" Grid.Column="0" Content="Inventory/Quests" Background="BurlyWood"></Label>
+        <Label Grid.Row="2" Grid.Column="1" Content="Combat/Movement Controls" Background="Lavender"></Label>
+        
     </Grid>
 </Window>
