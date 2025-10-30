@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Engine.ViewModels
 {
-    internal class GameSession
+    public class GameSession
     {
-        Player CurrentPlayer { get; set; } // Defines the Player property CurrentPlayer
+        public Player CurrentPlayer { get; set; } // Defines the Player property CurrentPlayer
 
         public GameSession() // Done within the GameSession class just for demonstration, will be done from elsewhere
         {                       // This constructor will set the player data when it loads, using the CurrentPlayer
