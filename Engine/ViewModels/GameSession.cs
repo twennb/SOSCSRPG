@@ -15,7 +15,11 @@ namespace Engine.ViewModels
         {                       // This constructor will set the player data when it loads, using the CurrentPlayer
             CurrentPlayer = new Player(); // instatiates the CurrentPlayer object from the Player class
             CurrentPlayer.Name = "Tom"; // sets the Name attribute to Tom
+            CurrentPlayer.CharacterClass = "Mage";
+            CurrentPlayer.HitPoints = 6;
             CurrentPlayer.Gold = 1000000;
+            CurrentPlayer.ExperiencePoints = 0;
+            CurrentPlayer.Level = 1;
         }
     }
 }
