@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUI"
         mc:Ignorable="d"
+        FontSize="11pt"
         Title="Main Game Window" Height="768" Width="1024">
     <Grid> <!-- Defines a grid in the window -->
         <Grid.RowDefinitions>  <!-- Defines the rows on the grid -->
@@ -36,7 +37,8 @@
             </Grid.ColumnDefinitions>
 
             <Label Grid.Row="0" Grid.Column="0" Content="Name:"/>
-            <Label Grid.Row="0" Grid.Column="1" Content="{Binding CurrentPlayer.Name}"/> <!--tells the program to look for the data in the DataContext we set up-->
+            <Label Grid.Row="0" Grid.Column="1" Content="{Binding CurrentPlayer.Name}"/>
+            <!--tells the program to look for the data in the DataContext we set up-->
             <Label Grid.Row="1" Grid.Column="0" Content="Class:"/>
             <Label Grid.Row="1" Grid.Column="1" Content="{Binding CurrentPlayer.CharacterClass}"/>
             <Label Grid.Row="2" Grid.Column="0" Content="Hit Points:"/>
@@ -51,7 +53,35 @@
             <Label Grid.Row="6" Grid.Column="1" Content="{Binding CurrentPlayer.Level}"/>
             <Button Grid.Row="7" Grid.Column="1" Content="Add XP" Click="ButtonBase_OnClick"></Button>
         </Grid>
-        <Label Grid.Row="1" Grid.Column="1" Content="Game Data" Background="Beige"></Label>
+        <Grid Grid.Row="1" Grid.Column="1" Background="Beige">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/> <!--3/5th of space; 3 out of 3*2 space-->
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Row="0" Grid.Column="1" BorderBrush="Gainsboro" BorderThickness="1">
+                <Grid Margin="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0"
+                               HorizontalAlignment="Center"
+                               Text="{Binding CurrentLocation.Name}"/>
+                    <TextBlock Grid.Row="2"
+                               HorizontalAlignment="Center"
+                               Text="{Binding CurrentLocation.Description}"/>
+                </Grid>
+            </Border>
+            
+        </Grid>
         <Label Grid.Row="2" Grid.Column="0" Content="Inventory/Quests" Background="BurlyWood"></Label>
         <Label Grid.Row="2" Grid.Column="1" Content="Combat/Movement Controls" Background="Lavender"></Label>
         

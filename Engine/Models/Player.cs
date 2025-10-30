@@ -63,7 +63,7 @@ namespace Engine.Models
             set
             {
                 _experiencePoints = value; // when something tries to set the value, pass on to _experiencePoints
-                OnPropertyChanged("ExperiencePoints"); // define which property this change updates
+                OnPropertyChanged("ExperiencePoints"); // passes on which property this change updates
             }
         } 
         public int Level

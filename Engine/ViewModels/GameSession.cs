@@ -10,6 +10,7 @@ namespace Engine.ViewModels
     public class GameSession
     {
         public Player CurrentPlayer { get; set; } // Defines the Player property CurrentPlayer
+        public Location CurrentLocation { get; set; }
 
         public GameSession() // Done within the GameSession class just for demonstration, will be done from elsewhere
         {                       // This constructor will set the player data when it loads, using the CurrentPlayer
@@ -21,6 +22,12 @@ namespace Engine.ViewModels
             CurrentPlayer.Gold = 1000000;
             CurrentPlayer.ExperiencePoints = 0;
             CurrentPlayer.Level = 1;
+
+            CurrentLocation = new Location();
+            CurrentLocation.Name = "Home";
+            CurrentLocation.XCoordinate = 0;
+            CurrentLocation.YCoordinate = -1;
+            CurrentLocation.Description = "This is your house!";
         }
     }
 }
