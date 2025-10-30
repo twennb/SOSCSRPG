@@ -9,6 +9,7 @@ namespace Engine.Models
 {
     public class Player : INotifyPropertyChanged
     {
+        // private variables
         private string _name;
         private string _characterClass;
         private int _hitPoints;
