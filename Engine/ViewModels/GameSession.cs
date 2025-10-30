@@ -17,6 +17,7 @@ namespace Engine.ViewModels
             CurrentPlayer.Name = "Tom"; // sets the Name attribute to Tom
             CurrentPlayer.CharacterClass = "Mage";
             CurrentPlayer.HitPoints = 6;
+            CurrentPlayer.Mana = 10;
             CurrentPlayer.Gold = 1000000;
             CurrentPlayer.ExperiencePoints = 0;
             CurrentPlayer.Level = 1;
