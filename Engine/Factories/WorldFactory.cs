@@ -14,11 +14,13 @@ namespace Engine.Factories
             World newWorld = new World();
 
             newWorld.AddLocation(-2, -1, "Farmer's Field",
-                "There are rows of corn growing here, with giant rats hiding between them.",
+                "There are rows of corn growing here," +
+                "\nwith giant rats hiding between them.",
                 "/Engine;component/Images/Locations/FarmFields.png");
 
             newWorld.AddLocation(-1, -1, "Farmer's House",
-                "This is the house of your neighbor, Farmer Ted.",
+                "This is the house of your neighbor," +
+                "\nFarmer Ted.",
                 "/Engine;component/Images/Locations/Farmhouse.png");
 
             newWorld.AddLocation(0, -1, "Home",
@@ -34,19 +36,23 @@ namespace Engine.Factories
                 "/Engine;component/Images/Locations/TownSquare.png");
 
             newWorld.AddLocation(1, 0, "Town Gate",
-                "There is a gate here, protecting the town from giant spiders.",
+                "There is a gate here," +
+                "\nprotecting the town from giant spiders.",
                 "/Engine;component/Images/Locations/TownGate.png");
 
             newWorld.AddLocation(2, 0, "Spider Forest",
-                "The trees in this forest are covered with spider webs.",
+                "The trees in this forest are" +
+                "\ncovered with spider webs.",
                 "/Engine;component/Images/Locations/SpiderForest.png");
 
             newWorld.AddLocation(0, 1, "Herbalist's hut",
-                "You see a small hut, with plants drying from the roof.",
+                "You see a small hut," +
+                "\nwith plants drying from the roof.",
                 "/Engine;component/Images/Locations/HerbalistsHut.png");
 
             newWorld.AddLocation(0, 2, "Herbalist's garden",
-                "There are many plants here, with snakes hiding behind them.",
+                "There are many plants here," +
+                "\nwith snakes hiding behind them.",
                 "/Engine;component/Images/Locations/HerbalistsGarden.png");
 
             return newWorld;
