@@ -7,19 +7,19 @@
         mc:Ignorable="d"
         FontSize="11pt"
         Title="Main Game Window" Height="768" Width="1024">
-    <Grid> <!-- Defines a grid in the window -->
-        <Grid.RowDefinitions>  <!-- Defines the rows on the grid -->
+    <Grid> <!-- Defines the Main grid in the window -->
+        <Grid.RowDefinitions>  <!-- Defines the rows on Main the grid -->
             <RowDefinition Height="Auto"></RowDefinition> <!-- Sets height to use the needed space only -->
             <RowDefinition Height="*"></RowDefinition> <!-- Sets the height to use all available space -->
             <RowDefinition Height="225"></RowDefinition> <!-- Sets the height to specifically 225 pixels -->
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions> <!-- Defines the columns on the grid -->
+        <Grid.ColumnDefinitions> <!-- Defines the columns on the Main grid -->
             <ColumnDefinition Width="250"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Menu" Background="AliceBlue"></Label> <!-- Places a label in grid slot 0,0 spanning 2 columns with text and a coloured background -->
-        <Grid Grid.Row="1" Grid.Column="0" Background="Aquamarine">
+        <Grid Grid.Row="1" Grid.Column="0" Background="Aquamarine"> <!-- Player Stats grid -->
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -50,9 +50,8 @@
             <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.ExperiencePoints}"/>
             <Label Grid.Row="6" Grid.Column="0" Content="Level:"/>
             <Label Grid.Row="6" Grid.Column="1" Content="{Binding CurrentPlayer.Level}"/>
-            <Button Grid.Row="7" Grid.Column="1" Content="Add XP" Click="ButtonBase_OnClick"></Button>
         </Grid>
-        <Grid Grid.Row="1" Grid.Column="1" Background="Beige">
+        <Grid Grid.Row="1" Grid.Column="1" Background="Beige"> <!-- Location details grid -->
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -89,7 +88,47 @@
             
         </Grid>
         <Label Grid.Row="2" Grid.Column="0" Content="Inventory/Quests" Background="BurlyWood"></Label>
-        <Label Grid.Row="2" Grid.Column="1" Content="Combat/Movement Controls" Background="Lavender"></Label>
-        
+        <Grid Grid.Row="2" Grid.Column="1" Background="Lavender"> <!-- Combat and Movement grid -->
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="255"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="1" 
+                        Height="25" Width="65" Margin="10"
+                        Click="OnClick_MoveNorth"
+                        Content="North"/>
+                <Button Grid.Row="1" Grid.Column="0"
+                        Height="25" Width="65" Margin="10"
+                        Click="OnClick_MoveWest"
+                        Content="West"/>
+                <Button Grid.Row="1" Grid.Column="2"
+                        Height="25" Width="65" Margin="10"
+                        Click="OnClick_MoveEast"
+                        Content="East"/>
+                <Button Grid.Row="2" Grid.Column="1"
+                        Height="25" Width="65" Margin="10"
+                        Click="OnClick_MoveSouth"
+                        Content="South"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

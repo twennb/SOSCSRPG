@@ -28,10 +28,5 @@ namespace WPFUI
 
             DataContext = _gameSession; // tells the XAML file to use this data
         }
-
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            _gameSession.CurrentPlayer.ExperiencePoints = _gameSession.CurrentPlayer.ExperiencePoints + 10;
-        }
     }
 }

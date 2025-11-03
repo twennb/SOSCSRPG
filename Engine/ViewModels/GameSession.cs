@@ -12,7 +12,6 @@ namespace Engine.ViewModels
     {
         public Player CurrentPlayer { get; set; } // Defines the Player property CurrentPlayer
         public Location CurrentLocation { get; set; }
-
         public World CurrentWorld { get; set; }
 
         public GameSession() // Done within the GameSession class just for demonstration, will be done from elsewhere
