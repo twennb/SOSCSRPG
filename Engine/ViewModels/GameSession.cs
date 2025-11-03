@@ -10,14 +10,14 @@ using System.Threading.Channels;
 
 namespace Engine.ViewModels
 {
-    public class GameSession: BaseNotificationClass
+    public class GameSession : BaseNotificationClass
     {
         private Location _currentLocation;
 
         public Player CurrentPlayer { get; set; } // Defines the Player property CurrentPlayer
         public Location CurrentLocation
         {
-            get {  return _currentLocation; }
+            get { return _currentLocation; }
             set
             {
                 _currentLocation = value;
@@ -47,16 +47,18 @@ namespace Engine.ViewModels
         }
 
         public GameSession() // Done within the GameSession class just for demonstration, will be done from elsewhere
-        {                       // This constructor will set the player data when it loads, using the CurrentPlayer
-            CurrentPlayer = new Player(); // instatiates the CurrentPlayer object from the Player class
-            CurrentPlayer.Name = "Tom"; // sets the Name attribute to Tom
-            CurrentPlayer.CharacterClass = "Mage";
-            CurrentPlayer.HitPoints = 6;
-            CurrentPlayer.Mana = 10;
-            CurrentPlayer.Gold = 1000000;
-            CurrentPlayer.ExperiencePoints = 0;
-            CurrentPlayer.Level = 1;
-
+        { 
+            CurrentPlayer = new Player
+                                { 
+                                    Name = "Tom",
+                                    CharacterClass = "Mage",
+                                    HitPoints = 6,
+                                    Mana = 10,
+                                    Gold = 0,
+                                    ExperiencePoints = 0,
+                                    Level = 1
+                                };
+            
             WorldFactory factory = new WorldFactory();
             CurrentWorld = factory.CreateWorld();
 
