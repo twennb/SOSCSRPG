@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Engine.Models
+{
+    public class Weapon : GameItem
+    {
+        // this class inherits from the GameItem class and has properties of its own
+        public int MinimumDamage { get; set; }
+        public int MaximumDamage { get; set; }
+
+        public Weapon(int itemTypeID, string name, int price, int minDamage, int maxDamage)
+            : base(itemTypeID, name, price)
+            //sends the relevant passed in values to the base class, the GameItem class, and uses those properties, then sets its own.
+        {
+            MinimumDamage = minDamage;
+            MaximumDamage = maxDamage;
+        }
+    }
+}
