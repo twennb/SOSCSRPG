@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Engine.EventArgs;
 using Engine.Models;
 using Engine.ViewModels;
 
@@ -25,6 +26,8 @@ namespace WPFUI
             InitializeComponent();
 
             _gameSession = new GameSession(); // instantiate the new GameSession object into _gameSession
+
+            _gameSession.OnMessageRaised += OnGameMessageRaised;
 
             DataContext = _gameSession; // tells the XAML file to use this data
         }
@@ -44,6 +47,12 @@ namespace WPFUI
         private void OnClick_MoveSouth(object sender, RoutedEventArgs e)
         {
             _gameSession.MoveSouth();
+        }
+
+        private void OnGameMessageRaised(object sender, GameMessageEventArgs e)
+        {
+            GameMessages.Document.Blocks.Add(new Paragraph(new Run(e.Message)));
+            GameMessages.ScrollToEnd();
         }
     }
 }
