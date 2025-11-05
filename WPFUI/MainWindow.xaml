@@ -60,6 +60,7 @@
             <Label Grid.Row="6" Grid.Column="0" Content="Level:"/>
             <Label Grid.Row="6" Grid.Column="1" Content="{Binding CurrentPlayer.Level}"/>
         </Grid>
+        
         <!-- Gameplay -->
         <Grid Grid.Row="1" Grid.Column="1" Background="Beige">
             <Grid.RowDefinitions>
@@ -72,6 +73,22 @@
                 <!--3/5th of space; 3 out of 3*2 space-->
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
+            
+            <!-- Game Messages -->
+            <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                    BorderBrush="Gainsboro" BorderThickness="1">
+
+                <RichTextBox x:Name="GameMessages"
+                             Background="Beige"
+                             VerticalScrollBarVisibility="Auto">
+                    <RichTextBox.Resources>
+                        <Style TargetType="{x:Type Paragraph}">
+                            <Setter Property="Margin" Value="0"/>
+                        </Style>
+                    </RichTextBox.Resources>
+                </RichTextBox>
+            </Border>
+            
             <!-- Location Information -->
             <Border Grid.Row="0" Grid.Column="1"
                     BorderBrush="Gainsboro" BorderThickness="1">
@@ -97,6 +114,7 @@
                                Text="{Binding CurrentLocation.Description}"/>
                 </Grid>
             </Border>
+            
             <!-- Monster Information -->
             <Border Grid.Row="1" Grid.Column="1"
                     BorderBrush="Gainsboro" BorderThickness="1">
@@ -126,6 +144,7 @@
                 </Grid>
             </Border>
         </Grid>
+        
         <!-- Inventory -->
         <Grid Grid.Row="2" Grid.Column="0" Background="BurlyWood">
             <TabControl>
@@ -160,6 +179,7 @@
                 </TabItem>
             </TabControl>
         </Grid>
+        
         <!-- Combat/Movement -->
         <Grid Grid.Row="2" Grid.Column="1" Background="Lavender">
             <Grid.RowDefinitions>
